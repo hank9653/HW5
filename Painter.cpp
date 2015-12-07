@@ -1,5 +1,6 @@
 #include "Painter.h"
 
+
 Painter::Painter(qreal _posx, qreal _posy, qreal _width, qreal _heigh, string shapeName,QPen _pen)
 {
     //ctor
@@ -41,6 +42,8 @@ void Painter::paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
         painter->setPen(pen);
         painter->drawRect(posx, posy, width, heigh);
         cout<<shapeName<<int2str(posx)+","<<int2str(posy)+","<<int2str(width)+","<<int2str(heigh)<<endl;
+        QPoint point = widget->mapFromGlobal(QCursor::pos());
+        cout << "Mouse click: (" << point.x() << ", " << point.y() << ").";
     }
 
     if(strstr(shape,"C(")!=NULL){//¥Í¦¨¬õ¦âCircle¡A·í¾ò¶êªº¨â­Ó¥b®|µ¥ªø§Y¬°¶ê§Î
@@ -48,18 +51,24 @@ void Painter::paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
         painter->setPen(pen);
         painter->drawEllipse(posx, posy, width, heigh);
         cout<<shapeName<<int2str(posx)+","<<int2str(posy)+","<<int2str(width)+","<<int2str(heigh)<<endl;
+        QPoint point = widget->mapFromGlobal(QCursor::pos());
+        cout << "Mouse click: (" << point.x() << ", " << point.y() << ").";
     }
     if(strstr(shape,"R(")!=NULL){//¥Í¦¨¬õ¦âRectangle
         //QPen pen(Qt::red);
         painter->setPen(pen);
         painter->drawRect(posx, posy, width, heigh);
         cout<<shapeName<<int2str(posx)+","<<int2str(posy)+","<<int2str(width)+","<<int2str(heigh)<<endl;
+        QPoint point = widget->mapFromGlobal(QCursor::pos());
+        cout << "Mouse click: (" << point.x() << ", " << point.y() << ").";
     }
     if(strstr(shape,"S(")!=NULL){//¥Í¦¨¬õ¦â¥¿¤è§Î
         //QPen pen(Qt::red);
         painter->setPen(pen);
         painter->drawRect(posx, posy, width, heigh);
         cout<<shapeName<<int2str(posx)+","<<int2str(posy)+","<<int2str(width)+","<<int2str(heigh)<<endl;
+        QPoint point = widget->mapFromGlobal(QCursor::pos());
+        cout << "Mouse click: (" << point.x() << ", " << point.y() << ").";
     }
 }
 

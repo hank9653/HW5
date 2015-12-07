@@ -2916,7 +2916,7 @@
 	<stack>
 	<utility>
 
-1449494808 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\gui.cpp
+1449516288 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\gui.cpp
 	"gui.moc"
 	<iostream>
 	<string>
@@ -2927,7 +2927,7 @@
 	"SimpleGraphics.h"
 	<QGraphicsItemGroup>
 
-1448432263 c:\users\920721\desktop\cplusplusprogram\hw4-master\gui.moc
+1449512420 c:\users\920721\desktop\cplusplusprogram\hw4-master\gui.moc
 	"gui.h"
 	<QtCore/qbytearray.h>
 	<QtCore/qmetatype.h>

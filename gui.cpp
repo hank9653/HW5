@@ -39,12 +39,19 @@ void gui::CreateView(){
     QString gView = "graphicView";
     graphicsView->setObjectName(gView);
 
+    ///////////////////
+    //graphicsView->setMouseTracking(true);
+    graphicsView->setDragMode(QGraphicsView::ScrollHandDrag);
+    graphicsView->setDragMode(QGraphicsView::RubberBandDrag);
+    ///////////////////
+
     scene = new QGraphicsScene();//管理painter item的物件
     graphicsView->setScene(scene);
     QVBoxLayout *layout = new QVBoxLayout;//呈現畫面
     layout->setMargin(0);
     layout->addWidget(graphicsView);
     widget->setLayout(layout);
+
 }
 
 void gui::SetActionConnection() {

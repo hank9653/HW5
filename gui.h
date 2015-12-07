@@ -52,8 +52,9 @@ class gui: public QMainWindow
         QAction *aboutDeveloper;
         QAction *openFile;
         QAction *saveFile;
-        QAction *openFileBar;
-        QAction *saveFileBar;
+        QAction *createCircle;
+        QAction *createRectangle;
+        QAction *createSquare;
         QMenu *about;
         QMenu *file;
         QToolBar *toolbar;
@@ -64,6 +65,9 @@ class gui: public QMainWindow
         void MessageDialog();
         void FileOpenDialog();
         void FileSaveDialog();
+        void createCircleItem();
+        void createRectangleItem();
+        void createSquareItem();
 
     private:
         DescriptionVisitor descriptionVisitor;

@@ -19,7 +19,7 @@ gui::gui()
     QString title = "Sample";
     setWindowTitle(title);
     setMinimumSize(800, 600);
-    Display();
+    //Display();
     //FileSaveDialog();
     //drawGraphics();
 
@@ -51,35 +51,61 @@ void gui::SetActionConnection() {
     connect(aboutDeveloper, SIGNAL(triggered()), this, SLOT(MessageDialog()));
     connect(openFile, SIGNAL(triggered()), this, SLOT(FileOpenDialog()));
     connect(saveFile, SIGNAL(triggered()), this, SLOT(FileSaveDialog()));
-    connect(openFileBar, SIGNAL(triggered()), this, SLOT(FileOpenDialog()));
-    connect(saveFileBar, SIGNAL(triggered()), this, SLOT(FileSaveDialog()));
+
+    connect(createCircle, SIGNAL(triggered()), this, SLOT(createCircleItem()));
+    connect(createRectangle, SIGNAL(triggered()), this, SLOT(createRectangleItem()));
+    connect(createSquare, SIGNAL(triggered()), this, SLOT(createSquareItem()));
+
 }
 
 void gui::CreateActions() {
     aboutDeveloper = new QAction("aboutDeveloper", widget);
     openFile = new QAction("openFile", widget);
     saveFile = new QAction("saveFile", widget);
+
+    createCircle = new QAction("createCircle", widget);
+    createRectangle = new QAction("createRectangle", widget);
+    createSquare = new QAction("createSquare", widget);
+
+    QIcon openFileicon;
+    openFileicon.addFile(QStringLiteral("./img/openFile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    openFile->setIcon(openFileicon);
+
+    QIcon saveFileicon;
+    saveFileicon.addFile(QStringLiteral("./img/saveFile.png"), QSize(), QIcon::Normal, QIcon::Off);
+    saveFile->setIcon(saveFileicon);
+
+    QIcon createCircleicon;
+    createCircleicon.addFile(QStringLiteral("./img/circle.ico"), QSize(), QIcon::Normal, QIcon::Off);
+    createCircle->setIcon(createCircleicon);
+
+    QIcon createRectangleicon;
+    createRectangleicon.addFile(QStringLiteral("./img/rectangle.ico"), QSize(), QIcon::Normal, QIcon::Off);
+    createRectangle->setIcon(createRectangleicon);
+
+    QIcon createSquareicon;
+    createSquareicon.addFile(QStringLiteral("./img/square.png"), QSize(), QIcon::Normal, QIcon::Off);
+    createSquare->setIcon(createSquareicon);
 }
 
 void gui::CreateMenus() {
-     QPixmap openpix("img/openFile.png");
-     QPixmap savepix("img/saveFile.png");
 
      file = menuBar()->addMenu("File");
-     openFile = file->addAction(openpix,"openFile");
-     saveFile = file->addAction(savepix,"saveFile");
+     file->addAction(openFile);
+     file->addAction(saveFile);
 
      about = menuBar()->addMenu("About");
      about->addAction(aboutDeveloper);
 }
 
 void gui::CreateToolbar(){
-    QPixmap openpix("img/openFile.png");
-    QPixmap savepix("img/saveFile.png");
 
     toolbar = addToolBar("toolbar");
-    openFileBar = toolbar->addAction(openpix,"openFile");
-    saveFileBar = toolbar->addAction(savepix,"saveFile");
+    toolbar->addAction(openFile);
+    toolbar->addAction(saveFile);
+    toolbar->addAction(createCircle);
+    toolbar->addAction(createRectangle);
+    toolbar->addAction(createSquare);
 }
 void gui::Display() {
 
@@ -154,3 +180,20 @@ void gui::drawGraphics(Graphics *graphics){
     //delete graphicsFactory;
 }
 
+void gui::createCircleItem(){
+    SimpleGraphics g1(new Circle(100,100,50));
+    Painter *item = new Painter((g1.getBoundingBox()).llx(),(g1.getBoundingBox()).lly(), (g1.getBoundingBox()).getL(), (g1.getBoundingBox()).getW(),  g1.shape()->describe(), QPen(Qt::blue));
+    scene->addItem(item);
+}
+
+void gui::createRectangleItem(){
+    SimpleGraphics g1(new Rectangle(0,0,100,50));
+    Painter *item = new Painter((g1.getBoundingBox()).llx(),(g1.getBoundingBox()).lly(), (g1.getBoundingBox()).getL(), (g1.getBoundingBox()).getW(),  g1.shape()->describe(), QPen(Qt::blue));
+    scene->addItem(item);
+}
+
+void gui::createSquareItem(){
+    SimpleGraphics g1(new Square(0,0,50));
+    Painter *item = new Painter((g1.getBoundingBox()).llx(),(g1.getBoundingBox()).lly(), (g1.getBoundingBox()).getL(), (g1.getBoundingBox()).getW(),  g1.shape()->describe(), QPen(Qt::blue));
+    scene->addItem(item);
+}

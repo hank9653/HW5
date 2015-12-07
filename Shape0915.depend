@@ -2853,7 +2853,7 @@
 1448432263 c:\users\920721\desktop\cplusplusprogram\hw4-master\circle.h
 	"Shape.h"
 
-1448432263 c:\users\920721\desktop\cplusplusprogram\hw4-master\rectangle.h
+1449494756 c:\users\920721\desktop\cplusplusprogram\hw4-master\rectangle.h
 	"Shape.h"
 
 1448432263 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\compositegraphics.cpp
@@ -2916,7 +2916,7 @@
 	<stack>
 	<utility>
 
-1448432263 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\gui.cpp
+1449494808 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\gui.cpp
 	"gui.moc"
 	<iostream>
 	<string>
@@ -2924,6 +2924,8 @@
 	"Circle.h"
 	"Rectangle.h"
 	"Square.h"
+	"SimpleGraphics.h"
+	<QGraphicsItemGroup>
 
 1448432263 c:\users\920721\desktop\cplusplusprogram\hw4-master\gui.moc
 	"gui.h"
@@ -3012,23 +3014,25 @@
 	<QApplication>
 	<QObject>
 
-1448432263 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\painter.cpp
+1449493781 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\painter.cpp
 	"Painter.h"
 
-1448432263 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\rectangle.cpp
+1449493724 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\rectangle.cpp
 	"Rectangle.h"
 	<sstream>
+	"Painter.h"
 
 1448432263 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\simplegraphics.cpp
 	"SimpleGraphics.h"
 	"Rectangle.h"
 	"AreaVisitor.h"
 
-1448432263 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\square.cpp
+1449493747 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\square.cpp
 	"Square.h"
 	"Rectangle.h"
 	<sstream>
 	<string>
+	"Painter.h"
 
 1448432263 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\util.cpp
 	"util.h"
@@ -3041,4 +3045,7 @@
 	<sstream>
 	<stack>
 	<utility>
+
+1444666580 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtwidgets\qgraphicsitemgroup
+	"qgraphicsitem.h"
 

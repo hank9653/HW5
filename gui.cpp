@@ -5,6 +5,8 @@
 #include "Circle.h"
 #include "Rectangle.h"
 #include "Square.h"
+#include "SimpleGraphics.h"
+#include <QGraphicsItemGroup>
 using namespace std;
 gui::gui()
 {
@@ -17,7 +19,7 @@ gui::gui()
     QString title = "Sample";
     setWindowTitle(title);
     setMinimumSize(800, 600);
-    //Display();
+    Display();
     //FileSaveDialog();
     //drawGraphics();
 
@@ -31,15 +33,15 @@ gui::~gui()
 }
 
 void gui::CreateView(){
-    widget = new QWidget();//Ã¸»spainter itemªºª«¥ó
+    widget = new QWidget();//ç¹ªè£½painter itemçš„ç‰©ä»¶
     setCentralWidget(widget);
-    graphicsView = new QGraphicsView(widget);//­n½Õ¾ã¥Í¦¨ªº¦ì¸m
+    graphicsView = new QGraphicsView(widget);//è¦èª¿æ•´ç”Ÿæˆçš„ä½ç½®
     QString gView = "graphicView";
     graphicsView->setObjectName(gView);
 
-    scene = new QGraphicsScene();//ºÞ²zpainter itemªºª«¥ó
+    scene = new QGraphicsScene();//ç®¡ç†painter itemçš„ç‰©ä»¶
     graphicsView->setScene(scene);
-    QVBoxLayout *layout = new QVBoxLayout;//§e²{µe­±
+    QVBoxLayout *layout = new QVBoxLayout;//å‘ˆç¾ç•«é¢
     layout->setMargin(0);
     layout->addWidget(graphicsView);
     widget->setLayout(layout);
@@ -80,9 +82,22 @@ void gui::CreateToolbar(){
     saveFileBar = toolbar->addAction(savepix,"saveFile");
 }
 void gui::Display() {
-/*    Painter *item = new Painter(100,100, 200, 100, widget);
-    scene->addItem(item);
-    scene->update();*/
+
+    SimpleGraphics g1(new Circle(100,100,50));
+    SimpleGraphics g2(new Circle(100,100,100));
+    Painter *item1 = new Painter((g1.getBoundingBox()).llx(),(g1.getBoundingBox()).lly(), (g1.getBoundingBox()).getL(), (g1.getBoundingBox()).getW(), g1.shape()->describe(), QPen(Qt::blue));
+    Painter *item2 = new Painter((g2.getBoundingBox()).llx(),(g2.getBoundingBox()).lly(), (g2.getBoundingBox()).getL(), (g2.getBoundingBox()).getW(), g1.shape()->describe(), QPen(Qt::blue));
+
+    // Group all selected items together
+    QGraphicsItemGroup *group = scene->createItemGroup(scene->selectedItems());
+    group->setFlag(QGraphicsItem::ItemIsMovable);
+    group->addToGroup(item1);
+    group->addToGroup(item2);
+    scene->addItem(group);
+    scene->update();//Â¨ÃªÂ·sÂµeÂ­Â±
+
+
+
 }
 
 void gui::MessageDialog() {
@@ -108,7 +123,7 @@ void gui::FileOpenDialog(){
         int found=filePath.find_first_of("\\");
         filePath.insert(found,"\\");
 
-        scene->clear();//²M°£­ì¦³ªº³õ´º
+        scene->clear();//æ¸…é™¤åŽŸæœ‰çš„å ´æ™¯
 
         GraphicsFactory graphicsFactory;
         Graphics *graphics=graphicsFactory.buildGraphicsFromFile(filePath.c_str());

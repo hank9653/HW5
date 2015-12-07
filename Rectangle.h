@@ -12,6 +12,8 @@ public:
     int lly() const{return y;}
     int urx() const{return x+l;}
     int ury() const{return y+w;}
+    int getL() const{return l;}
+	int getW() const{return w;}
     std::string describe();
     void draw(QGraphicsScene *gs,QPen pen);
     //int perimeter();

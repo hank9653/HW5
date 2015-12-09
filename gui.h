@@ -55,6 +55,8 @@ class gui: public QMainWindow
         QAction *createCircle;
         QAction *createRectangle;
         QAction *createSquare;
+        QAction *group;
+        QAction *nongroup;
         QMenu *about;
         QMenu *file;
         QToolBar *toolbar;
@@ -68,6 +70,8 @@ class gui: public QMainWindow
         void createCircleItem();
         void createRectangleItem();
         void createSquareItem();
+        void groupItem();
+        void nongroupItem();
 
     private:
         DescriptionVisitor descriptionVisitor;

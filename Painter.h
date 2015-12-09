@@ -13,6 +13,8 @@
 #include <QColor>
 #include <QPen>
 #include <QPointF>
+#include <QGraphicsSceneMouseEvent>
+#include <QVariant>
 
 using namespace std;
 class Painter:public QGraphicsItem , public QWidget
@@ -32,6 +34,8 @@ class Painter:public QGraphicsItem , public QWidget
         string int2str(int i);
         void paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget);
         QPen pen;
+        void mouseReleaseEvent(QGraphicsSceneMouseEvent * event);
+        QVariant itemChange(GraphicsItemChange change, const QVariant &value);
 
 
 
@@ -39,6 +43,7 @@ class Painter:public QGraphicsItem , public QWidget
 
     protected:
     private:
+        bool selected=false;
 };
 
 #endif // PAINTER_H

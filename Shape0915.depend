@@ -3014,7 +3014,7 @@
 	<QApplication>
 	<QObject>
 
-1449493781 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\painter.cpp
+1449516417 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\painter.cpp
 	"Painter.h"
 
 1449493724 source:c:\users\920721\desktop\cplusplusprogram\hw4-master\rectangle.cpp
@@ -3048,4 +3048,242 @@
 
 1444666580 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtwidgets\qgraphicsitemgroup
 	"qgraphicsitem.h"
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\areavisitor.cpp
+	"AreaVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\areavisitor.h
+	"GraphicsVisitor.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\graphicsvisitor.h
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\simplegraphics.h
+	"Graphics.h"
+	"Shape.h"
+	<iostream>
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\graphics.h
+	"DrawVisitor.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\drawvisitor.h
+	"GraphicsVisitor.h"
+	<QGraphicsScene>
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\shape.h
+	<string>
+	<QGraphicsScene>
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\compositegraphics.h
+	"Graphics.h"
+	<vector>
+	"GraphicsVisitor.h"
+
+1449493699 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\circle.cpp
+	"Circle.h"
+	"Rectangle.h"
+	<sstream>
+	"Painter.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\circle.h
+	"Shape.h"
+
+1449494756 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\rectangle.h
+	"Shape.h"
+
+1449618078 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\painter.h
+	<QPainter>
+	<QGraphicsItem>
+	<QAction>
+	<QStaticText>
+	"qwidget.h"
+	<iostream>
+	<string>
+	<sstream>
+	<QColor>
+	<QPen>
+	<QPointF>
+	<QGraphicsSceneMouseEvent>
+	<QVariant>
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\compositegraphics.cpp
+	"CompositeGraphics.h"
+	<algorithm>
+	"Rectangle.h"
+	"GraphicsVisitor.h"
+	"AreaVisitor.h"
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\descriptionvisitor.cpp
+	"DescriptionVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"Rectangle.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\descriptionvisitor.h
+	"GraphicsVisitor.h"
+	"Graphics.h"
+	<string>
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\drawvisitor.cpp
+	"DrawVisitor.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"Rectangle.h"
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\graphics.cpp
+	"Graphics.h"
+	"Rectangle.h"
+	<string>
+	"AreaVisitor.h"
+
+1449605868 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\graphicsfactory.cpp
+	"GraphicsFactory.h"
+	<vector>
+	<fstream>
+	<sstream>
+	"Circle.h"
+	"Square.h"
+	"Rectangle.h"
+	"Graphics.h"
+	"SimpleGraphics.h"
+	"CompositeGraphics.h"
+	"util.h"
+
+1449605626 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\graphicsfactory.h
+	"Graphics.h"
+	<stack>
+	<string>
+	<utility>
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\square.h
+	"Shape.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\util.h
+	"Shape.h"
+	<vector>
+	<string>
+	"Graphics.h"
+	<stack>
+	<utility>
+
+1449617879 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\gui.cpp
+	"gui.moc"
+	<iostream>
+	<string>
+	"Shape.h"
+	"Circle.h"
+	"Rectangle.h"
+	"Square.h"
+	"SimpleGraphics.h"
+	<QGraphicsItemGroup>
+
+1449609504 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\gui.moc
+	"gui.h"
+	<QtCore/qbytearray.h>
+	<QtCore/qmetatype.h>
+
+1449609454 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\gui.h
+	<QtWidgets/QMainWindow>
+	<Qt>
+	<QGraphicsView>
+	<QtWidgets/QToolBar>
+	<QVBoxLayout>
+	<QGraphicsScene>
+	<QMenu>
+	<QMenuBar>
+	<QToolBar>
+	<QMessageBox>
+	<QString>
+	<QWidget>
+	<QFileDialog>
+	<QTextStream>
+	"Painter.h"
+	<iostream>
+	<string>
+	<sstream>
+	"GraphicsFactory.h"
+	"Graphics.h"
+	"DescriptionVisitor.h"
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\main.cpp
+	"cppunitlite/TestHarness.h"
+	"utTryQt.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\cppunitlite\testharness.h
+	"Test.h"
+	"TestResult.h"
+	"Failure.h"
+	"TestRegistry.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\cppunitlite\test.h
+	<cmath>
+	"SimpleString.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\cppunitlite\simplestring.h
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\cppunitlite\testresult.h
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\cppunitlite\failure.h
+	"SimpleString.h"
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\cppunitlite\testregistry.h
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\uttryqt.h
+	<QApplication>
+	<QFont>
+	<QPushButton>
+	<QLabel>
+	<QVBoxLayout>
+	<QGraphicsView>
+	<QGraphicsItem>
+	"gui.h"
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\myqobject.cpp
+	"MyQObject.moc"
+	<iostream>
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\myqobject.moc
+	"MyQObject.h"
+	<QtCore/qbytearray.h>
+	<QtCore/qmetatype.h>
+
+1448432263 c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\myqobject.h
+	<QApplication>
+	<QObject>
+
+1449618093 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\painter.cpp
+	"Painter.h"
+
+1449493724 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\rectangle.cpp
+	"Rectangle.h"
+	<sstream>
+	"Painter.h"
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\simplegraphics.cpp
+	"SimpleGraphics.h"
+	"Rectangle.h"
+	"AreaVisitor.h"
+
+1449493747 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\square.cpp
+	"Square.h"
+	"Rectangle.h"
+	<sstream>
+	<string>
+	"Painter.h"
+
+1448432263 source:c:\users\ting-jhih\desktop\cplusplusprogram\hw4-master\util.cpp
+	"util.h"
+	<fstream>
+	"CompositeGraphics.h"
+	"SimpleGraphics.h"
+	"Circle.h"
+	"Square.h"
+	"Rectangle.h"
+	<sstream>
+	<stack>
+	<utility>
+
+1444666580 c:\qt\qt5.5.1\5.5\mingw492_32\include\qtcore\qvariant
+	"qvariant.h"
 

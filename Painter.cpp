@@ -13,19 +13,59 @@ Painter::Painter(qreal _posx, qreal _posy, qreal _width, qreal _heigh, string sh
     setFlag(QGraphicsItem::ItemIsSelectable);
     setFlag(QGraphicsItem::ItemIsMovable);
     setFlag(QGraphicsItem::ItemSendsGeometryChanges);
+
+
 }
 
 Painter::~Painter()
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
 {
     //dtor
 }
 
+void Painter::mouseReleaseEvent(QGraphicsSceneMouseEvent * event){
+   /* if(selected==true){
+        //return this;
+    }
+    QPointF point = event->pos();
+    //cout<<"Release"<<endl;
+    cout << "Mouse Release: (" << point.x() << ", " << point.y() << ").";*/
+}
 
 QRectF Painter::boundingRect() const
 {
     return QRectF(posx,posy,width,heigh);
 }
 
+
+QVariant Painter::itemChange(GraphicsItemChange change, const QVariant &value)
+{
+    if (change == QGraphicsItem::ItemSelectedChange)
+    {
+        if (value == true)
+        {
+           // painter->setPen(Qt::yellow);
+            //painter->drawRect(boundingRect());
+            // do stuff if selected
+            //this->setSelected(true);
+        }
+        else
+        {
+            //painter->setPen(pen);
+            //painter->drawRect(posx, posy, width, heigh);
+            // do stuff if not selected
+            //this->setSelected(false);
+        }
+    }
+
+    return QGraphicsItem::itemChange(change, value);
+}
 
 
 void Painter::paint(QPainter * painter, const QStyleOptionGraphicsItem * option, QWidget * widget)
@@ -52,7 +92,7 @@ void Painter::paint(QPainter * painter, const QStyleOptionGraphicsItem * option,
         painter->drawEllipse(posx, posy, width, heigh);
         cout<<shapeName<<int2str(posx)+","<<int2str(posy)+","<<int2str(width)+","<<int2str(heigh)<<endl;
         QPoint point = widget->mapFromGlobal(QCursor::pos());
-        cout << "Mouse click: (" << point.x() << ", " << point.y() << ").";
+        //cout << "Mouse click: (" << point.x() << ", " << point.y() << ").";
     }
     if(strstr(shape,"R(")!=NULL){//¥Í¦¨¬õ¦âRectangle
         //QPen pen(Qt::red);

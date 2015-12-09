@@ -15,7 +15,7 @@ public:
     Graphics * extractGraphicsFromOneLine(string & contents, int & level); /*implement line 3 */
     void compose (); /* implement lines 5, 6 as well as line 8 */
 public:
-    stack<pair<int, Graphics *>> pda;
+    stack<pair<int, Graphics *> > pda;
 };
 
 

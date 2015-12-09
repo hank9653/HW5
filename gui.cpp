@@ -62,6 +62,8 @@ void gui::SetActionConnection() {
     connect(createCircle, SIGNAL(triggered()), this, SLOT(createCircleItem()));
     connect(createRectangle, SIGNAL(triggered()), this, SLOT(createRectangleItem()));
     connect(createSquare, SIGNAL(triggered()), this, SLOT(createSquareItem()));
+    connect(group, SIGNAL(triggered()), this, SLOT(groupItem()));
+    connect(nongroup, SIGNAL(triggered()), this, SLOT(nongroupItem()));
 
 }
 
@@ -73,6 +75,8 @@ void gui::CreateActions() {
     createCircle = new QAction("createCircle", widget);
     createRectangle = new QAction("createRectangle", widget);
     createSquare = new QAction("createSquare", widget);
+    group = new QAction("group", widget);
+    nongroup = new QAction("nongroup", widget);
 
     QIcon openFileicon;
     openFileicon.addFile(QStringLiteral("./img/openFile.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -93,6 +97,14 @@ void gui::CreateActions() {
     QIcon createSquareicon;
     createSquareicon.addFile(QStringLiteral("./img/square.png"), QSize(), QIcon::Normal, QIcon::Off);
     createSquare->setIcon(createSquareicon);
+
+    QIcon groupicon;
+    groupicon.addFile(QStringLiteral("./img/group.ico"), QSize(), QIcon::Normal, QIcon::Off);
+    group->setIcon(groupicon);
+
+    QIcon nongroupicon;
+    nongroupicon.addFile(QStringLiteral("./img/nongroup.ico"), QSize(), QIcon::Normal, QIcon::Off);
+    nongroup->setIcon(nongroupicon);
 }
 
 void gui::CreateMenus() {
@@ -113,6 +125,8 @@ void gui::CreateToolbar(){
     toolbar->addAction(createCircle);
     toolbar->addAction(createRectangle);
     toolbar->addAction(createSquare);
+    toolbar->addAction(group);
+    toolbar->addAction(nongroup);
 }
 void gui::Display() {
 
@@ -203,4 +217,16 @@ void gui::createSquareItem(){
     SimpleGraphics g1(new Square(0,0,50));
     Painter *item = new Painter((g1.getBoundingBox()).llx(),(g1.getBoundingBox()).lly(), (g1.getBoundingBox()).getL(), (g1.getBoundingBox()).getW(),  g1.shape()->describe(), QPen(Qt::blue));
     scene->addItem(item);
+}
+
+void gui::groupItem(){
+   /* QGraphicsItemGroup *group = scene->createItemGroup(scene->selectedItems());
+    group->setFlag(QGraphicsItem::ItemIsMovable);
+    group->addToGroup(item1);
+    group->addToGroup(item2);
+    scene->addItem(group);
+    scene->update();//¨ê·sµe­±*/
+}
+
+void gui::nongroupItem(){
 }

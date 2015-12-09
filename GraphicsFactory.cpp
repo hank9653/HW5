@@ -13,13 +13,13 @@
 
 void GraphicsFactory::compose () {
     vector<Graphics *> temp;
-    int level=get<0>(pda.top());
-    for (; get<0>(pda.top()) == level; pda.pop())
-        temp.push_back(get<1>(pda.top()));
-    if (get<0>(pda.top()) == level-1) {
+    int level=(pda.top()).first;
+    for (; (pda.top()).first == level; pda.pop())
+        temp.push_back((pda.top()).second);
+    if ((pda.top()).first == level-1) {
         vector<Graphics *>::reverse_iterator it = temp.rbegin();
         for (; it != temp.rend(); ++it) {
-            get<1>(pda.top())->add(*it);
+            (pda.top()).second->add(*it);
         }
     }
 }
@@ -112,7 +112,7 @@ Graphics * GraphicsFactory::buildGraphicsFromFile(const char * fileName) {
     if (contents.empty()) {
         while (pda.size() > 1)
             compose();
-        gr = get<1>(pda.top());
+        gr = (pda.top()).second;
     }
     return gr;
 }
